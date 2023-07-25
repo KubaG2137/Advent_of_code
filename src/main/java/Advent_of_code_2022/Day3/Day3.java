@@ -13,6 +13,7 @@ public class Day3 {
         Scanner sc = new Scanner(file);
 
         String str, str1, str2;
+        List<Character> strList;
         List<Character> str1List;
         List<Character> str2List;
         List<Character> duplicates = new ArrayList<>();
@@ -20,18 +21,20 @@ public class Day3 {
 
         while (sc.hasNext()) {
             str = sc.nextLine();
-            str1 = str.substring(0, str.length() / 2);
-            str2 = str.substring(str.length() / 2);
+            str1 = sc.nextLine();
+            str2 = sc.nextLine();
 
+            strList = str.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
             str1List = str1.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
             str2List = str2.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
 
-            for (char e : str1List) {
-                if (str2List.contains(e)) {
+            for (char e : strList) {
+                if (str1List.contains(e) && str2List.contains(e)) {
                     duplicates.add(e);
                     break;
                 }
             }
+            strList.clear();
             str1List.clear();
             str2List.clear();
         }
