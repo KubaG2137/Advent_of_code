@@ -2,12 +2,11 @@ package Advent_of_code_2022.Day3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Day3 {
+
     public static void main(String[] args) throws FileNotFoundException {
 
         File file = new File("..\\Advent_of_code\\src\\main\\java\\Advent_of_code_2022\\Day3\\input.txt");
@@ -30,8 +29,11 @@ public class Day3 {
             for (char e : str1List) {
                 if (str2List.contains(e)) {
                     duplicates.add(e);
+                    break;
                 }
             }
+            str1List.clear();
+            str2List.clear();
         }
         for (char e : duplicates) {
             if (Character.isUpperCase(e)) {
