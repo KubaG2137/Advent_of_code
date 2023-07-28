@@ -39,12 +39,18 @@ public class Day4 {
             createArray(array2, num3, num4);
 
             if (array1.size() > array2.size()) {
-                if(array1.containsAll(array2)) {
-                    counter++;
+                for (Integer e: array1) {
+                    if (array2.contains(e)) {
+                        counter++;
+                        break;
+                    }
                 }
             } else {
-                if(array2.containsAll(array1)) {
-                    counter++;
+                for (Integer e: array2) {
+                    if (array1.contains(e)) {
+                        counter++;
+                        break;
+                    }
                 }
             }
             array1.clear();
