@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Day4 {
 
     public static void createArray (ArrayList<Integer> array, int num1, int num2) {
+
         int number = num1;
         for (int i = 0; i < num2 - num1 +1; i++) {
             array.add(number);
@@ -20,6 +21,7 @@ public class Day4 {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
+
         File file = new File("..\\Advent_of_code\\src\\main\\java\\Advent_of_code_2022\\Day4\\input.txt");
         Scanner sc = new Scanner(file);
         ArrayList<Integer> array1 = new ArrayList<>();
